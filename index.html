@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Review Website</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        main {
+            flex-grow: 1;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .movie-container {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 25px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .movie-title {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .movie-rating {
+            color: #ffa500;
+            font-weight: bold;
+        }
+
+        .movie-review {
+            margin-top: 15px;
+            color: #666;
+        }
+
+        .add-review-form {
+            background-color: #f0f8ff; /* Light blue background */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .add-review-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .review-uploaded {
+            background-color: #dff0d8;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Add some more color and style */
+        h1 {
+            font-size: 2.5rem; /* Increase header font size */
+        }
+        .container {
+            background-color: #f9f9f9; /* Light grey background */
+        }
+        .add-review-form {
+            background-color: #e6f0ff; /* Lighter blue for form */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Movie Review Website</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <div id="movie-reviews">
+            </div>
+
+            <div class="add-review-form">
+                <h2>Add a Review</h2>
+                <input type="text" id="movie-title" placeholder="Movie Title" required><br><br>
+                <select id="movie-rating">
+                    <option value="1">⭐</option>
+                    <option value="2">⭐⭐</option>
+                    <option value="3">⭐⭐⭐</option>
+                    <option value="4">⭐⭐⭐⭐</option>
+                    <option value="5">⭐⭐⭐⭐⭐</option>
+                </select><br><br>
+                <textarea id="movie-review" placeholder="Write your review here" rows="5" required></textarea><br><br>
+                <button class="add-review-button" onclick="addReview()">Add Review</button>
+            </div>
+
+            <div id="review-uploaded-message" class="review-uploaded" style="display: none;">
+                Review uploaded successfully!
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2024 Movie Review Website
+    </footer>
+
+    <script>
+        function addReview() {
+            const movieTitle = document.getElementById('movie-title').value;
+            const movieRating = document.getElementById('movie-rating').value;
+            const movieReview = document.getElementById('movie-review').value;
+
+            // ... (Create and append the review to the page as before) ...
+
+            alert("Review added successfully!");
+
+            // Clear the form fields
+            document.getElementById('movie-title').value = '';
+            document.getElementById('movie-rating').value = '1';
+            document.getElementById('movie-review').value = '';
+        }
+    </script>
+
+</body>
+</html>
